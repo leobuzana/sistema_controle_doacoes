@@ -4,6 +4,9 @@
  */
 package visao;
 
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author buzan
@@ -15,6 +18,26 @@ public class CadastrarPessoaVisao extends javax.swing.JPanel {
      */
     public CadastrarPessoaVisao() {
         initComponents();
+    }
+    
+    public String getNome(){
+        return txtNome.getText();
+    }
+    
+    public String getCpf(){
+        return txtCpf.getText();
+    }
+    
+    public String getEmail(){
+        return txtEmail.getText();
+    }
+    
+    public void exibirMensagem(String msg){
+        JOptionPane.showMessageDialog(this, msg);
+    }
+    
+    public void adicionarAcaoBotao(ActionListener acao){
+        btnCadastrarPessoa.addActionListener(acao);
     }
 
     /**
