@@ -17,6 +17,19 @@ public class CadastrarItemVisao extends javax.swing.JFrame {
      */
     public CadastrarItemVisao() {
         initComponents();
+        inicializaTela();
+    }
+    
+    public void inicializaTela(){
+        setVisible(true);
+    }
+    
+    public String getNome(){
+        return txtNomeItem.getText();
+    }
+    
+    public int getQuantidade(){
+        return Integer.parseInt(txtQuantidade.getText());
     }
 
     /**

@@ -8,6 +8,9 @@ import dao.PessoaDAO;
 import java.awt.event.ActionListener;
 import repositorio.PessoaRepositorio;
 import controlador.CadastarPessoaControlador;
+import controlador.GerenciarDoacaoControlador;
+import controlador.GerenciarEstoqueControlador;
+import controlador.SituacaoPessoaControlador;
 
 /**
  *
@@ -22,27 +25,27 @@ public class MenuVisao extends javax.swing.JFrame {
      */
     public MenuVisao() {
         initComponents();
-        setVisible(true);
-        adicionarAcaoBotoes();
-    }
-    
-    public void adicionarAcaoBotoes(){
         btnConsultarSituacao.addActionListener(e->acaoConsultarSituacao());
         btnDoacao.addActionListener(e->acaoGerenciarDoacao());
         btnEstoque.addActionListener(e->acaoGerenciarEstoque());
         btnPessoas.addActionListener(e->acaoGerenciarPessoas());
+        setVisible(true);
     }
-    
+
     public void acaoConsultarSituacao(){
-        
-        
+        SituacaoPessoaVisao visao = new SituacaoPessoaVisao();
+        SituacaoPessoaControlador controlador = new SituacaoPessoaControlador(visao);        
     }
     
     public void acaoGerenciarDoacao(){
+        GerenciarDoacaoVisao visao = new GerenciarDoacaoVisao();
+        GerenciarDoacaoControlador controlador = new GerenciarDoacaoControlador(visao);
         
     }
     
     public void acaoGerenciarEstoque(){
+        GerenciarEstoqueVisao visao = new GerenciarEstoqueVisao();
+        GerenciarEstoqueControlador controlador = new GerenciarEstoqueControlador(visao);
         
     }
     

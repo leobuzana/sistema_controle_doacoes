@@ -22,13 +22,25 @@ public class CadastarPessoaControlador {
     public CadastarPessoaControlador(CadastrarPessoaVisao visao, PessoaRepositorio repositorio){
         this.visao = visao;
         this.repositorio = repositorio;
+        adicionarBotao();
     }
     
     public void adicionarBotao(){
-        
+        visao.adicionarAcaoBotao(e->cadastrarPessoa());
     }
     
     public void cadastrarPessoa(){
+        
+        String nome = visao.getNome();
+        String cpf = visao.getCpf();
+        String email = visao.getEmail();
+        
+        Pessoa p = new Pessoa(nome, cpf, email);
+        repositorio.addPessoa(p);
+        
+        visao.limpaTela();
+        visao.atualizaListaPessoas(repositorio.listarPessoas());
+        
         
     }
     
