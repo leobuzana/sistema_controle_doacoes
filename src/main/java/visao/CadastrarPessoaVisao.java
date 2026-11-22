@@ -18,6 +18,12 @@ public class CadastrarPessoaVisao extends javax.swing.JPanel {
      */
     public CadastrarPessoaVisao() {
         initComponents();
+        inicializaTela();
+        
+    }
+    
+    public void inicializaTela(){
+        setVisible(true);
     }
     
     public String getNome(){

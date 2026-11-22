@@ -6,6 +6,7 @@ package controlador;
 
 import dao.PessoaDAO;
 import modelo.Pessoa;
+import repositorio.PessoaRepositorio;
 import visao.CadastrarPessoaVisao;
 
 /**
@@ -16,9 +17,9 @@ public class CadastarPessoaControlador {
     
     private Pessoa modelo;
     private CadastrarPessoaVisao visao;
-    private PessoaDAO repositorio;
+    private PessoaRepositorio repositorio;
     
-    public CadastarPessoaControlador(CadastrarPessoaVisao visao, PessoaDAO repositorio){
+    public CadastarPessoaControlador(CadastrarPessoaVisao visao, PessoaRepositorio repositorio){
         this.visao = visao;
         this.repositorio = repositorio;
     }

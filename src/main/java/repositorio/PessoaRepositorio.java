@@ -11,8 +11,7 @@ import modelo.Pessoa;
  *
  * @author buzan
  */
-public interface PessoaRepositorio {
-    
+public interface PessoaRepositorio { 
     boolean addPessoa(Pessoa p);
     List<Pessoa> listarPessoas();
     

@@ -4,7 +4,10 @@
  */
 package visao;
 
+import dao.PessoaDAO;
 import java.awt.event.ActionListener;
+import repositorio.PessoaRepositorio;
+import controlador.CadastarPessoaControlador;
 
 /**
  *
@@ -19,13 +22,36 @@ public class MenuVisao extends javax.swing.JFrame {
      */
     public MenuVisao() {
         initComponents();
+        setVisible(true);
+        adicionarAcaoBotoes();
     }
     
-    public void adicionarAcaoBotoes(ActionListener acao){
-        btnConsultarSituacao.addActionListener(acao);
-        btnDoacao.addActionListener(acao);
-        btnEstoque.addActionListener(acao);
-        btnPessoas.addActionListener(acao);
+    public void adicionarAcaoBotoes(){
+        btnConsultarSituacao.addActionListener(e->acaoConsultarSituacao());
+        btnDoacao.addActionListener(e->acaoGerenciarDoacao());
+        btnEstoque.addActionListener(e->acaoGerenciarEstoque());
+        btnPessoas.addActionListener(e->acaoGerenciarPessoas());
+    }
+    
+    public void acaoConsultarSituacao(){
+        
+        
+    }
+    
+    public void acaoGerenciarDoacao(){
+        
+    }
+    
+    public void acaoGerenciarEstoque(){
+        
+    }
+    
+    public void acaoGerenciarPessoas(){
+        CadastrarPessoaVisao visao = new CadastrarPessoaVisao();
+        PessoaRepositorio repositorio = new PessoaDAO();
+        
+        CadastarPessoaControlador controlador = new CadastarPessoaControlador(visao, repositorio);
+        
     }
 
     /**
